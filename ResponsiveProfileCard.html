@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .profile-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .profile-card:hover {
+            transform: scale(1.05);
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #4CAF50;
+        }
+        .name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .designation {
+            color: #777;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        .bio {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            color: #4CAF50;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #388E3C;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <img src="D:\All Documents\PassPhoto.jpg" width="100" >
+        <div class="name">SANGANA VENKATESWALU</div>
+        <div class="designation">FULL STACK DEVELOPER</div>
+        <div class="bio">Passionate about building interactive web applications and user-friendly experiences.</div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+</body>
+</html>

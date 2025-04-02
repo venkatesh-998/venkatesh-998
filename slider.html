@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #f4f4f4;
+        }
+        #slider-container {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ddd;
+            border-radius: 10px;
+        }
+        #slider {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .btn-container {
+            margin-top: 10px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="slider-container">
+        <img id="slider" src="https://www.w3schools.com/w3images/fjords.jpg" alt="Image Slider">
+    </div>
+    
+    <div class="btn-container">
+        <button class="btn" onclick="prevImage()">Previous</button>
+        <button class="btn" onclick="nextImage()">Next</button>
+    </div>
+
+    <script>
+        // ✅ Array of real image URLs (accessible and working images)
+        const images = [
+            'https://www.w3schools.com/w3images/fjords.jpg',
+            'https://www.w3schools.com/w3images/lights.jpg',
+            'https://www.w3schools.com/w3images/mountains.jpg',
+            'https://www.w3schools.com/w3images/nature.jpg'
+        ];
+        
+        let currentIndex = 0;
+        const slider = document.getElementById('slider');
+
+        // ✅ Function to display an image
+        function showImage(index) {
+            slider.src = images[index];
+            slider.alt = `Image ${index + 1}`; // Adds alt text for accessibility
+        }
+
+        // ✅ Function for next image
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        // ✅ Function for previous image
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        // ✅ Display the first image initially
+        window.onload = function() {
+            showImage(currentIndex);
+        };
+    </script>
+
+</body>
+</html>
